@@ -45,22 +45,22 @@ d3.json(url).then(function (response) {
     for (var i = 0; i < depths.length; i++) {
     
         if (depths[i] >= 90) {
-            colors.push("#FF3333");
+            colors.push("#581845");
         }
         else if (depths[i] <= 89 && depths[i] >= 70) {
-            colors.push("#FF6133");
+            colors.push("#900C3F");
         }
         else if (depths[i] <= 69 && depths[i] >= 50) {
-            colors.push("#FF9F33");
+            colors.push("#C70039");
         }
         else if (depths[i] <= 59 && depths[i] >= 30) {
-            colors.push("#FFC433");
+            colors.push("#FF5733");
         }
         else if (depths[i] <= 29 && depths[i] >= 10) {
-            colors.push("#FFFF33");
+            colors.push("#FFC300");
         }
         else {
-            colors.push("#85FF33");
+            colors.push("#DAF7A6");
         }
     }
     // console.log(magnitudes)
@@ -78,6 +78,7 @@ d3.json(url).then(function (response) {
         radius: magnitudes[i] * 7
       }).bindPopup("<h2>" + places[i] + "</h2> <hr> <h3>Magnitude: " + magnitudes[i] + "</h3><h3>Depth: " + depths[i] + "</h3>").addTo(myMap);
     }
+
 
 });
 
