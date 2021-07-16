@@ -60,13 +60,14 @@ d3.json(url).then(function (response) {
             colors.push("#FFFF33");
         }
         else {
-            colors.push("85FF33");
+            colors.push("#85FF33");
         }
     }
     // console.log(magnitudes)
     // console.log(places)
     // console.log(locations)
-    console.log(colors)
+    // console.log(depths)
+    // console.log(colors)
 
     for (var i = 0; i < locations.length; i++) {
         L.circleMarker(locations[i], {
