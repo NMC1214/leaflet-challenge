@@ -22,4 +22,4 @@ Visualize an earthquake data set.
 
    * Include popups that provide additional information about the earthquake when a marker is clicked.
 
-
+The website that visualizes this data set has been deployed to GitHub pages.
