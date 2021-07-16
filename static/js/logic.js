@@ -22,8 +22,8 @@ d3.json(url).then(function (response) {
     var locations = [];
     var magnitudes = [];
     var depths = [];
-    var colors = [];
     var places = [];
+    var colors = [];
 
     var features = response.features;
     // console.log(features)
@@ -42,16 +42,37 @@ d3.json(url).then(function (response) {
                        
     }
 
-
+    for (var i = 0; i < depths.length; i++) {
+    
+        if (depths[i] >= 90) {
+            colors.push("#FF3333");
+        }
+        else if (depths[i] <= 89 && depths[i] >= 70) {
+            colors.push("#FF6133");
+        }
+        else if (depths[i] <= 69 && depths[i] >= 50) {
+            colors.push("#FF9F33");
+        }
+        else if (depths[i] <= 59 && depths[i] >= 30) {
+            colors.push("#FFC433");
+        }
+        else if (depths[i] <= 29 && depths[i] >= 10) {
+            colors.push("#FFFF33");
+        }
+        else {
+            colors.push("85FF33");
+        }
+    }
     // console.log(magnitudes)
     // console.log(places)
     // console.log(locations)
+    console.log(colors)
 
     for (var i = 0; i < locations.length; i++) {
         L.circleMarker(locations[i], {
         fillOpacity: 0.75,
-        color: "red",
-        fillColor: "red",
+        color: "black",
+        fillColor: colors[i],
         // Adjust radius
         radius: magnitudes[i] * 7
       }).bindPopup("<h2>" + places[i] + "</h2> <hr> <h3>Magnitude: " + magnitudes[i] + "</h3><h3>Depth: " + depths[i] + "</h3>").addTo(myMap);
